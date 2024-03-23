@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+  <link rel="stylesheet"
+  href="style.css">
+  
+</head>
+<body>
+  <h1>Task Management</h1>
+  <div>
+    
+    <center><img src="task1.png" alt="background" height="200" width="200"></center>
+    <Center><h2>Add Task</h2></Center>
+    <center><label for="task"> Enter Tasks:<br> </label>
+   <center><input type="text" id="new-task" placeholder="Enter task name">
+    <button onclick="addTask()">Add Task</button><br>
+    <button onclick="logout()">Logout</button><br><br>
+   
+  </center> 
+  </div>
+  <div>
+    <center><h2>Tasks List</h2></center>
+    <center><ul id="task-list"></ul></center>
+    
+  </div>
+ <script src="script.js"></script>
+
+  
+</body>
+</html>

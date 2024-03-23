@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  
+
+  label {
+    display: block;
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+input {
+  display: block;
+  width: 25%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+
+button {
+  background-color: rgb(13, 177, 241);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+#task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px;
+}
+
+#task-list li input[type="checkbox"] {
+  margin-right: 10px; /* Keep some space between checkbox and task name */
+  transform: scale(1.5); /* Increase the size of the checkbox */
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+  #task-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  #error {
+    margin-top: 10px;
+  }
+  
+  #filters {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    text-align: center;
+  }
+  #task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  #task-list li {
+    margin-bottom: 10px;
+  }
+  #task-list li input[type="checkbox"] {
+    margin-right: 10px;
+  }

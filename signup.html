@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Task Management Application</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+    background-image: url("background3.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <center><h1 style="color: black;">Sign Up</h1></center>
+  <form id="signup-form">
+    <center><img src="signup2.png" alt="signup" height="200" width="250"></center>
+    
+    <center>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter Your Name" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter Your Email Address" required><br>
+
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" placeholder="Enter Your Gender" required><br>
+
+      <label for="mobile">Mobile No:</label>
+      <input type="text" id="mobile" placeholder="Enter Your Mobile No" required><br>
+
+      <label for="occupation">Occupation:</label>
+      <input type="text" id="occupation" placeholder="Enter Your Occupation" required><br>
+
+      <label for="currentpassword">Set Password:</label>
+      <input type="password" id="currentpassword" placeholder="Set Password" required autocomplete="current-password"><br>
+
+      <button type="submit">Sign Up</button>
+    </center>
+  </form>
+
+  <center>
+    <p>Already have an account? <br>
+    <a href="login.html">Login</a><br>
+    Or<br>
+    <a href="index.html">Home Page</a></p>
+  </center> 
+
+ 
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var gender = document.getElementById("gender").value;
+      var mobile = document.getElementById("mobile").value;
+      var occupation = document.getElementById("occupation").value;
+      var password = document.getElementById("currentpassword").value;
+
+      
+      var user = {
+        name: name,
+        email: email,
+        gender: gender,
+        mobile: mobile,
+        occupation: occupation,
+        currentpassword: password
+      };
+
+     
+      var users = JSON.parse(localStorage.getItem("users")) || [];
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      if (user) {
+        alert("Resigtered Successfully !! now login with your credentials");
+        
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+
+       window.location.href = "index.html";
+
+    });
+  </script>
+</body>
+</html>

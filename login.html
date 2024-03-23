@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Task Management Application</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+    background-image: url("background3.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+  }
+  </style>
+
+ </head>
+<body>
+  
+  <center><h1>Login</h1></center>
+  <form id="login-form" action="task.html"  >
+    <center><img src="login2.jpg" alt="background" height="200" width="200"></center>
+  
+      <label for="name"> Name:<br> </label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="currentpassword">  Password:<br> </label>
+      <input type="password" id="currentpassword" name="password" placeholder="Enter your Password" required autocomplete="current-password">
+    
+
+    <center><button type="submit">Login</button></center> 
+  </form>
+  <center>
+    <p>Don't have an account? <a href="signup.html">Sign Up  </a><br>Or <br><a href="index.html">Home Page</a></p>
+  </center>
+
+
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+     
+      var name = document.getElementById("name").value;
+      var currentpassword = document.getElementById("currentpassword").value;
+
+      
+      var users = JSON.parse(localStorage.getItem("users")) || [];
+      var user = users.find(u => u.name === name && u.currentpassword === currentpassword);
+
+      
+      if (user) {
+        alert("Login successful! Redirecting to authenticated area...");
+        window.location.href = "task.html";
+        
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+
+      // window.location.href = "task.html";
+    });
+
+    
+  </script>
+</body>
+</html>
